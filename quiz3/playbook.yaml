@@ -1,0 +1,13 @@
+---
+- name: Installation for target VM using roles 
+  hosts: target
+
+  tasks:
+  - name: FTP server installation
+    include_role:
+      name: ftpserver
+    when: ansible_distribution == 'CentOS'
+
+  - name: FTP client test installation
+    include_role:
+      name: ftpclient

@@ -1,0 +1,7 @@
+---
+# tasks file for roles/ftpserver
+
+- name: Install FTP package 
+  ansible.builtin.yum:
+    name: vsftpd
+    state: latest
